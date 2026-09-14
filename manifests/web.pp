@@ -260,10 +260,10 @@ class zabbix::web (
 
   # Is set to true, it will create the apache vhost.
   if $manage_vhost {
-    $zabbix_ui_dir = versioncmp($zabbix_version, '8.0') ? {
-      # Version older than 8.0
+    $zabbix_ui_dir = versioncmp($zabbix_version, '7.2') ? {
+      # Version older than 7.2
       -1      => '/usr/share/zabbix',
-      # Version 8.0 and newer
+      # Version 7.2 and newer
       default => '/usr/share/zabbix/ui',
     }
 
